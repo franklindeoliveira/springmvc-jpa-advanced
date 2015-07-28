@@ -4,17 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.springmvc.servicos.Servico1;
+import br.com.springmvc.repository.JpaRepository;
 
 @Controller
-public class RepositoryController {
+public class JpaController {
 	
 	@Autowired
-	private Servico1 servico;
+	private JpaRepository repository;
 
-	@RequestMapping("/repository")
+	@RequestMapping("/jpa")
 	public String conexaoEstabelecida() {
-		servico.testeCrud();
+		repository.create();
 		return "home";
 	}
 

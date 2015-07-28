@@ -1,9 +1,15 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 	<body>
-		<h2>Spring MVC!</h2>
+		<h2>JPA com Hibernate!</h2>
 		<ul>
-			<li><a href="http://localhost:8080/springmvc/repository">GO</a> - Exemplo de acesso ao banco de dados utilizando injeção de dependência.</li>
+			<li>Definindo um identificador (ID): ID simples, composto e complexo.</li>
+			<li>Mapeando múltiplas tabelas.</li>
+			<li>Mapeando herança: Mapped Superclass, Single Table, Joined e Table Per Class</li>
+			<li>Anotação Embedded.</li>
+			<li>Mapeando enums e lista de valores.</li>
+			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Um para Um</li>
+			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Um para Muitos</li>
+			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Muitos para Muitos</li>
 		</ul>
 	</body>
 </html>

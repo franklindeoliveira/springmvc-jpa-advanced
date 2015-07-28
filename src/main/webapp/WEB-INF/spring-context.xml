@@ -21,6 +21,9 @@
 	<!-- Habilita as annotations do Spring MVC -->
 	<mvc:annotation-driven />
 	
+	<!-- Localiza e faz auto DI para os bean com @Transaction -->  
+	<tx:annotation-driven />
+	
 	<!-- Configura o Spring MVC para acessar conteúdo estático -->
 	<mvc:default-servlet-handler />
 	
@@ -54,8 +57,5 @@
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-	
-	<!-- Localiza e faz auto DI para os bean com @Transaction -->  
-	<tx:annotation-driven />
 
 </beans>
