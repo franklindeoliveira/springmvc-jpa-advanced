@@ -10,6 +10,9 @@
 			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Um para Um</li>
 			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Um para Muitos</li>
 			<li>Mapeando relacionamentos (Unidirecional e Bidirecional): Muitos para Muitos</li>
+			<li>Cascade: Persist, Detach, Merge, Refresh, Remove e All</li>
+			<li>OrphanRemoval</li>
+			<li>Carregamento Lazy e Eager</li>
 		</ul>
 	</body>
 </html>

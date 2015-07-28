@@ -152,6 +152,77 @@ public class JpaRepository {
 //		livro2.getAutores().add(autor3);
 //		livro3.getAutores().add(autor3);
 		
+		// cascade: persist
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+		
+		// cascade: detach
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		entityManager.persist(rg);
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+//		entityManager.flush();// sincroniza os objeto do contexto de persistencia com o bd.
+//		entityManager.detach(pessoa);// desvincula pessoa (e rg, por cascade) do contexto de persistencia.
+//		rg.setNumero("111111");// essa alteração não será refletida no bd, pois a anotação detach em pessoa, tornou a entidade rg detached.
+		
+		// cascade: merge
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+//		entityManager.merge(pessoa);// atualiza pessoa, realizando update (se rg possuir id) ou insert (se rg NAO possuir id) em rg.
+
+		// cascade: refresh (só aceita entity maneged, ou seja, salva no bd)
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		entityManager.persist(rg);
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+//		entityManager.flush();// sincroniza.
+//		rg.setNumero("111111");
+//		// popula os atributos de pessoa com os dados do banco. Ou seja, a jpa realiza um select no banco para carregar os atributos do banco e substituir os  atributos da instancia.
+//		// Resultado: rg.setNumero("111111") é descartado.
+//		entityManager.refresh(pessoa);
+		
+		// cascade: remove
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		entityManager.persist(rg);
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+//		entityManager.flush();// sincroniza. (atualiza os scripts sql)
+//		entityManager.remove(pessoa);
+		
+		// cascade: all - equivalente a utilizar todos os cascades simultaneamente.
+		// observação: é possível fazer combinações de cascade, por exemplo:
+		// @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+		
+		// orphanRemoval: tem a mesmo efeito que utilizar CascadeType.REMOVE mas conceitualmente é diferente.
+		// idealmente utilizada quando as entidades relacionadas devem coexistir, ou seja, não faz sentido ter
+		// uma entidade sem outra relacionada.
+		// No caso abaixo, só faz sentido ter um rg caso tenha uma pessoa associada.
+//		Rg rg = new Rg("123456", "01/01/2001");
+//		entityManager.persist(rg);
+//		Pessoa pessoa = new Pessoa("Nome", "20 anos");
+//		entityManager.persist(pessoa);
+//		rg.setPessoa(pessoa);
+//		pessoa.setRg(rg);
+//		entityManager.remove(pessoa);
+		
+		// load lazy exemplo: br.com.springmvc.modelo.load.lazy
+		// relacionamentos terminando em Many são por default lazy
+		
+		// load eager exemplo: br.com.springmvc.modelo.load.eager
+		// relacionamentos terminando em One são por default eager
+
 	}
 
 	public void read(Integer id) {
